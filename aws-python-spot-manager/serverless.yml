@@ -12,7 +12,7 @@ functions:
   modifySpotRequestOn:
     handler: handler.lambda_handler
     environment:
-      SPOT_FLEET_REQUEST_ID: sfr-802b0cac-0764-41da-9827-dfc2dff0dbe0
+      SPOT_FLEET_REQUEST_ID: sfr-396ac24b-be95-42d6-9df1-4d7658f71296
       NEW_TARGET_CAPACITY: 1
     events:
       - schedule:
@@ -21,7 +21,7 @@ functions:
   modifySpotRequestOff:
     handler: handler.lambda_handler
     environment:
-      SPOT_FLEET_REQUEST_ID: sfr-802b0cac-0764-41da-9827-dfc2dff0dbe0
+      SPOT_FLEET_REQUEST_ID: sfr-396ac24b-be95-42d6-9df1-4d7658f71296
       NEW_TARGET_CAPACITY: 0
     events:
       - schedule:
