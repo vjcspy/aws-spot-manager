@@ -1,0 +1,28 @@
+service: modify-spot-request
+
+frameworkVersion: '4'
+
+provider:
+  name: aws
+  runtime: python3.12
+  region: ap-southeast-1
+  role: arn:aws:iam::196761233825:role/lambda-ec2-spot-scheduler-role
+
+functions:
+  modifySpotRequestOn:
+    handler: handler.lambda_handler
+    environment:
+      SPOT_FLEET_REQUEST_ID: sfr-802b0cac-0764-41da-9827-dfc2dff0dbe0
+      NEW_TARGET_CAPACITY: 3
+    events:
+      - schedule:
+          rate: cron(0 6 * * ? *)
+
+  modifySpotRequestOff:
+    handler: handler.lambda_handler
+    environment:
+      SPOT_FLEET_REQUEST_ID: sfr-802b0cac-0764-41da-9827-dfc2dff0dbe0
+      NEW_TARGET_CAPACITY: 0
+    events:
+      - schedule:
+          rate: cron(30 14 * * ? *)
