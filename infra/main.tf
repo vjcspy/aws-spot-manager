@@ -24,7 +24,10 @@ resource "aws_iam_policy" "lambda_ec2_policy" {
       {
         Action = [
           "ec2:DescribeSpotInstanceRequests",
-          "ec2:ModifySpotFleetRequest"
+          "ec2:ModifySpotFleetRequest",
+          "ec2:AllocateAddress",       # Thêm quyền allocate Elastic IP
+          "ec2:AssociateAddress",      # Thêm quyền associate Elastic IP
+          "ec2:DescribeInstances"      # Thêm quyền describe instances
         ],
         Effect   = "Allow",
         Resource = "*"
