@@ -33,4 +33,4 @@ functions:
       SPOT_FLEET_REQUEST_ID: sfr-396ac24b-be95-42d6-9df1-4d7658f71296
       ALLOCATION_ID: eipalloc-0fcb2f68adda9bfbb
     events:
-      - schedule: rate(5 minutes)
+      - schedule: rate(30 minutes)
