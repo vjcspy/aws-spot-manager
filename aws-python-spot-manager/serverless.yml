@@ -13,7 +13,7 @@ functions:
     handler: handler.lambda_handler
     environment:
       SPOT_FLEET_REQUEST_ID: sfr-396ac24b-be95-42d6-9df1-4d7658f71296
-      NEW_TARGET_CAPACITY: 1
+      NEW_TARGET_CAPACITY: 0
     events:
       - schedule:
           rate: cron(0 2 * * ? *)
